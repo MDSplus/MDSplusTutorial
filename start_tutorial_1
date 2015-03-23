@@ -1,0 +1,12 @@
+export tutorial_path=./trees
+export CLASSPATH=$MDSPLUS_DIR/javadispatcher/jDispatcher.jar:$MDSPLUS_DIR/javatraverser/jTraverser.jar:$MDSPLUS_DIR/javascope/jScope.jar
+export LD_LIBRARY_PATH=./DemoAdc:$MDSPLUS_DIR/lib64:$MDSPLUS_DIR/lib32:$LD_LIBRARY_PATH
+java jTraverser tutorial&
+xterm  -e 'bash scripts/mdsip.sh' &
+sleep 2
+java jScope jScope/Tutorial_1.jscp &
+java jScope jScope/Tutorial_2.jscp &
+java jScope jScope/Tutorial_3.jscp &
+
+
+
