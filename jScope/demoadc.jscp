@@ -1,7 +1,7 @@
-Scope.geometry: 750x550+424+21
+Scope.geometry: 750x550+685+0
 Scope.update.disable: false
 Scope.update.disable_when_icon: true
-Scope.font: java.awt.Font[family=Dialog,name=Times,style=plain,size=14]
+Scope.font: java.awt.Font[family=Dialog,name=Dialog,style=plain,size=14]
 
 
 Scope.color_0: Black,java.awt.Color[r=0,g=0,b=0]
@@ -24,6 +24,8 @@ Scope.fast_network_access: false
 Scope.reversed: false
 
 Scope.global_1_1.experiment: tutorial
+Scope.global_1_1.event: ADC1_READY
+Scope.global_1_1.shot: 2
 Scope.global_1_1.horizontal_offset: 0
 Scope.global_1_1.vertical_offset: 0
 
@@ -31,7 +33,7 @@ Scope.columns: 2
 Scope.rows_in_column_1: 2
 
 
-Scope.plot_1_1.height: 217
+Scope.plot_1_1.height: 216
 Scope.plot_1_1.grid_mode: 0
 Scope.plot_1_1.x_log: false
 Scope.plot_1_1.y_log: false
@@ -52,7 +54,7 @@ Scope.plot_1_1.marker_1_1: 0
 Scope.plot_1_1.step_marker_1_1: 1
 
 
-Scope.plot_2_1.height: 217
+Scope.plot_2_1.height: 216
 Scope.plot_2_1.grid_mode: 0
 Scope.plot_2_1.x_log: false
 Scope.plot_2_1.y_log: false
@@ -74,7 +76,7 @@ Scope.plot_2_1.step_marker_1_1: 1
 Scope.rows_in_column_2: 2
 
 
-Scope.plot_1_2.height: 217
+Scope.plot_1_2.height: 216
 Scope.plot_1_2.grid_mode: 0
 Scope.plot_1_2.x_log: false
 Scope.plot_1_2.y_log: false
@@ -95,7 +97,7 @@ Scope.plot_1_2.marker_1_1: 0
 Scope.plot_1_2.step_marker_1_1: 1
 
 
-Scope.plot_2_2.height: 217
+Scope.plot_2_2.height: 216
 Scope.plot_2_2.grid_mode: 0
 Scope.plot_2_2.x_log: false
 Scope.plot_2_2.y_log: false

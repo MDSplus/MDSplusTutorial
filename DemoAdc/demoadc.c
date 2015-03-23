@@ -21,25 +21,25 @@ printf("PARTE STORE\n");
     for(i = 0; i < 65536; i++)
     {
 //First channel: Noisy sine waveform (about 65 periods)
-	currVal = (sin(6.28 * i/1000.) + rand()/(100. * RAND_MAX)) * 32767;
+	currVal = (sin(6.28 * i/1000.) + rand()/(10. * RAND_MAX)) * 32767;
 	if(currVal < -32767) currVal = -32767;
 	if(currVal > 32767) currVal = 32767;
 	chan1[i] = (short)currVal;
 
 //Second channel: More noisy sine waveform (about 65 periods)
-	currVal = (sin(6.28 * i/1000.) + rand()/(50. * RAND_MAX)) * 32767;
+	currVal = (sin(6.28 * i/1000.) + rand()/(5. * RAND_MAX)) * 32767;
 	if(currVal < -32767) currVal = -32767;
 	if(currVal > 32767) currVal = 32767;
 	chan2[i] = (short)currVal;
 
 //Third channel: Noisy sine waveform (about 6 periods)
-	currVal = (sin(6.28 * i/10000.) + rand()/(100. * RAND_MAX)) * 32767;
+	currVal = (sin(6.28 * i/10000.) + rand()/(10. * RAND_MAX)) * 32767;
 	if(currVal < -32767) currVal = -32767;
 	if(currVal > 32767) currVal = 32767;
 	chan3[i] = (short)currVal;
 
-//Second channel: More noisy sine waveform (about 6 periods)
-	currVal = (sin(6.28 * i/10000.) + rand()/(50. * RAND_MAX)) * 32767;
+//Fourth channel: More noisy sine waveform (about 6 periods)
+	currVal = (sin(6.28 * i/10000.) + rand()/(5. * RAND_MAX)) * 32767;
 	if(currVal < -32767) currVal = -32767;
 	if(currVal > 32767) currVal = 32767;
 	chan4[i] = (short)currVal;
