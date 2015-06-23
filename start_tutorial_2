@@ -6,6 +6,7 @@ xterm  -e 'bash scripts/jDispatcher.sh' &
 sleep 2
 export tutorial_path=trees
 export LD_LIBRARY_PATH=DemoAdc:$LD_LIBRARY_PATH
+jTraverser tutorial&
 scripts/jDispatchMonitor.sh&
 jScope jScope/demoadc.jscp&
 xterm  -e 'bash scripts/tcl.sh' &
