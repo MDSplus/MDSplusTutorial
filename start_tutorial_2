@@ -1,8 +1,8 @@
-export LIBRARIES=$LD_LIBRARY_PATH
-xterm  -e 'bash scripts/mdsip.sh' &
-xterm  -e 'bash scripts/jServer.sh 8003' &
-xterm  -e 'bash scripts/jServer.sh 8004' &
-xterm  -e 'bash scripts/jDispatcher.sh' &
+jTraverser tutorial&
+xterm  -e bash scripts/mdsip.sh &
+xterm  -e bash scripts/jServer.sh 8003 $LD_LIBRARY_PATH &
+xterm  -e bash scripts/jServer.sh 8004 $LD_LIBRARY_PATH &
+xterm  -e bash scripts/jDispatcher.sh &
 sleep 2
 export tutorial_path=trees
 export LD_LIBRARY_PATH=DemoAdc:$LD_LIBRARY_PATH
