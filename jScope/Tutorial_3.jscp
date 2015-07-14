@@ -1,4 +1,4 @@
-Scope.geometry: 750x550+726+61
+Scope.geometry: 750x550+152+199
 Scope.update.disable: false
 Scope.update.disable_when_icon: true
 Scope.font: java.awt.Font[family=Dialog,name=Dialog,style=plain,size=14]
@@ -42,7 +42,7 @@ Scope.plot_1_1.bitClip: false
 Scope.plot_1_1.experiment: tutorial
 Scope.plot_1_1.num_shot: 1
 Scope.plot_1_1.num_expr: 2
-Scope.plot_1_1.continuous_update: 1
+Scope.plot_1_1.continuous_update: 0
 Scope.plot_1_1.global_defaults: 261889
 Scope.plot_1_1.y_expr_1: \TUTORIAL::TOP.TRENDS:TREND_2
 Scope.plot_1_1.mode_1D_1_1: Line
@@ -69,7 +69,7 @@ Scope.plot_2_1.bitClip: false
 Scope.plot_2_1.experiment: tutorial
 Scope.plot_2_1.num_shot: 1
 Scope.plot_2_1.num_expr: 2
-Scope.plot_2_1.continuous_update: 1
+Scope.plot_2_1.continuous_update: 0
 Scope.plot_2_1.global_defaults: 261889
 Scope.plot_2_1.y_expr_1: \TUTORIAL::TOP.TRENDS:TREND_3
 Scope.plot_2_1.mode_1D_1_1: Line
