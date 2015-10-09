@@ -1,5 +1,0 @@
-export tutorial_path=$MDSPLUS_DIR/tutorial
-export CLASSPATH=$MDSPLUS_DIR/javadispatcher/jDispatcher.jar:$MDSPLUS_DIR/javatraverser/jTraverser.jar:$MDSPLUS_DIR/javascope/jScope.jar
-export LD_LIBRARY_PATH=$MDSPLUS_DIR/tutorial:$MDSPLUS_DIR/lib64:$MDSPLUS_DIR/lib32:$LD_LIBRARY_PATH:$LIBRARIES
-java jServer $1
-

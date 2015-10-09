@@ -1,9 +1,25 @@
 export tutorial_path=./trees
 export LD_LIBRARY_PATH=./DemoAdc:$LD_LIBRARY_PATH
 jTraverser tutorial&
-xterm  -e 'bash scripts/mdsip.sh' &
+if [ $# -ne 0 ]
+  then
+    xterm  -e bash scripts/mdsip.sh $1 &
+  else
+    xterm  -e 'bash scripts/mdsip.sh 8001' &
+fi
 sleep 2
-jScope jScope/Tutorial_1.jscp &
-jScope jScope/Tutorial_2.jscp &
-jScope jScope/Tutorial_3.jscp &
-
+if [ $# -ne 0 ]
+  then
+    export updated_ip="Scope.data_server_argument: localhost:"$1
+    echo $fixed_ip
+    awk -F':' '$3 == 8001  {print ENVIRON["updated_ip"]} $3 != 8001 {print $0}' jScope/Tutorial_1.jscp > jScope/Tutorial_1_updated.jscp
+    awk -F':' '$3 == 8001  {print ENVIRON["updated_ip"]} $3 != 8001 {print $0}' jScope/Tutorial_2.jscp > jScope/Tutorial_2_updated.jscp
+    awk -F':' '$3 == 8001  {print ENVIRON["updated_ip"]} $3 != 8001 {print $0}' jScope/Tutorial_3.jscp > jScope/Tutorial_3_updated.jscp
+    jScope jScope/Tutorial_1_updated.jscp &
+    jScope jScope/Tutorial_2_updated.jscp &
+    jScope jScope/Tutorial_3_updated.jscp &
+  else
+    jScope jScope/Tutorial_1.jscp &
+    jScope jScope/Tutorial_2.jscp &
+    jScope jScope/Tutorial_3.jscp &
+fi
