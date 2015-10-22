@@ -3,9 +3,9 @@ export LD_LIBRARY_PATH=./DemoAdc:$LD_LIBRARY_PATH
 jTraverser tutorial&
 if [ $# -ne 0 ]
   then
-    xterm  -e bash scripts/mdsip.sh $1 &
+    xterm  -e bash scripts/mdsip.sh $1 `pwd`/trees&
   else
-    xterm  -e 'bash scripts/mdsip.sh 8001' &
+    xterm  -e bash scripts/mdsip.sh 8001 `pwd`/trees &
 fi
 sleep 2
 if [ $# -ne 0 ]
