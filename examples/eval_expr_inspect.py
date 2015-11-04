@@ -25,4 +25,10 @@ if(isinstance(evalData, Scalar)):
 else:
     if(isinstance(evalData, Array)):
         print "Array", evalData.getShape()
-	print evalData
+	if (isinstance(evalData, Float32Array) or isinstance(evalData, Float64Array)):
+	    print evalData.getFloatArray()
+	else:
+	    if (isinstance(evalData, StringArray)):
+	        print evalData.getString()
+	    else:
+	        print evalData.getIntArray()
