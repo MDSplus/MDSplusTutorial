@@ -2,7 +2,7 @@
 
 from setuptools import setup, Extension
 version='0.2'
-setup(name='DemoAdc',
+setup(name='TutorialDevices',
       version=version,
       description='DEMOADC Python Device support',
       long_description = """
