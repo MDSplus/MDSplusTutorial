@@ -1,5 +1,7 @@
+export tutorial_path=./trees
+export LD_LIBRARY_PATH=./DemoAdc:$LD_LIBRARY_PATH
 jTraverser tutorial&
-xterm  -e bash scripts/mdsip.sh &
+xterm  -e bash scripts/mdsip.sh 8001 &
 xterm  -e bash scripts/jServer.sh 8003 $LD_LIBRARY_PATH &
 xterm  -e bash scripts/jServer.sh 8004 $LD_LIBRARY_PATH &
 xterm  -e bash scripts/jDispatcher.sh &

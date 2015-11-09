@@ -46,8 +46,8 @@ class DEMOADC(Device):
 #and it will download configuration to the device
     def init(self,arg):
 #Need to import some classes from MDSplus package
+	print "CACCA -2"
       	from MDSplus import TreeNode
-
 #The device will be configured via a shared library (libDemoAdc in the MDSplus distribution) defining the following routines:
 # initialize(char *name, int clockFreq, int postTriggerSamples)
 # where clockFreq can have the following values:
@@ -68,6 +68,7 @@ class DEMOADC(Device):
 # used in real devices
 #
 #Since we need to link against a shaed library from python, we need ctypes package.
+	print "CACCA -1"
         from ctypes import CDLL, c_int, c_char_p
 	try:
       	    deviceLib = CDLL("libDemoAdcShr.so")
@@ -82,6 +83,7 @@ class DEMOADC(Device):
 #1) instantiate a TreeNode object, passing the integer nid to the constructor
 #2) read and evaluate (in the case the content is an expression) its content via TreeNode.data() method 
 #all data access operation will be but in a try block in order to check for missing or wrong configuration data
+	print "CACCA 0"
 	try:
    	    name = self.name.data()
 #we expect to get a string in name
@@ -89,7 +91,7 @@ class DEMOADC(Device):
 	    print 'Missing Name in device'
 	    return 0
 
-
+	print "CACCA 1"
 #read the clock frequency and convert to clock mode. We use a dictionary for the conversion, and assume 
 	clockDict = {1000:1, 5000:2, 10000:3, 50000:4, 100000:5}
 	try:
@@ -98,6 +100,7 @@ class DEMOADC(Device):
 	except:
 	    print 'Missing or invalid clock frequency'
 	    return 0
+	print "CACCA 2"
 
 #read Post Trigger Samples and check for consistency
 	try:
@@ -105,6 +108,7 @@ class DEMOADC(Device):
 	except:
 	    print 'Missing or invalid Post Trigger Samples'
 	    return 0
+	print "CACCA 3"
 
 #all required configuation collected. Call external routine initialize passing the right parameters
 #we use ctypes functions to convert python variable to appropriate C types to be passed to the external routine
@@ -127,6 +131,7 @@ class DEMOADC(Device):
 	    print 'Cannot link to device library'
 	    return 0
 
+	print "CACCA 1"
 
 #get name
 	try:
@@ -144,6 +149,7 @@ class DEMOADC(Device):
 	rawChan.append(DataArray())
 	rawChan.append(DataArray())
 	rawChan.append(DataArray())
+	print "CACCA 2"
 
 	status = deviceLib.acquire(c_char_p(name), byref(rawChan[0]), byref(rawChan[1]), byref(rawChan[2]), byref(rawChan[3]))
 	if status == -1:
@@ -159,6 +165,7 @@ class DEMOADC(Device):
 #4) store the Signal object in the tree
 
 #read PostTriggerSamples
+	print "CACCA 3"
 	try:
 	    pts = self.pts.data()
 	except:
@@ -198,6 +205,7 @@ class DEMOADC(Device):
 	except:
 	    print 'Missing or invalid clock frequency'
 	    return 0
+	print "CACCA 4"
 	
 
 #the following steps are performed for each acquired channel 
