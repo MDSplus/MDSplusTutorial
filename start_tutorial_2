@@ -1,14 +1,13 @@
 export tutorial_path=$(pwd)/trees
 export LD_LIBRARY_PATH=$(pwd)/DemoAdc:$LD_LIBRARY_PATH
-export CLASSPATH=$MDSPLUS_DIR/java/classes/jDispatcher.jar:$MDSPLUS_DIR/java/classes/jTraverser.jar:$MDSPLUS_DIR/java/classes/jScope.jar
+export CLASSPATH=$MDSPLUS_DIR/java/classes/jDispatcher.jar:$MDSPLUS_DIR/java/classes/jTraverser.jar:$MDSPLUS_DIR/java/classes/jScope.jar:$MDSPLUS_DIR/java/classes/mdsobjects.jar
 jTraverser tutorial&
-xterm  -e 'mdsip -p 8001 -m -h $MDSPLUS_DIR/etc/mdsip.hosts' &
 xterm  -e 'jServer 8003' &
 xterm  -e 'jServer 8004' &
 xterm  -e 'java jDispatcherIp tutorial' &
 sleep 2
 java jDispatchMonitor localhost:8010 &
-jScope jScope/demoadc.jscp &
+jScope -l jScope/demoadc.jscp &
 sleep 5
 xterm  -e 'cd scripts;mdstcl'
 kill -9 %?jTraverser %?mdsip %?'jServer 8003' %?'jServer 8004' %?'java jDispatcherIp' %?'java jDispatchMonitor' %?jScope
